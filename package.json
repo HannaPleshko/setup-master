@@ -1,0 +1,15 @@
+{
+  "name": "hcl-keep-setup",
+  "version": "1.0.0",
+  "description": "hcl-keep-setup",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git add . && git commit -m :rocket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.xby.icdc.io:hcl/quattro/hcl-keep-setup.git"
+  },
+  "author": "IBA Group",
+  "license": "ISC"
+}

@@ -1,0 +1,71 @@
+/local/notesdata already exists
+Info: Using default configuration in script
+Using local CA
+Generate Root CA's private key
+Generating RSA private key, 4096 bit long modulus (2 primes)
+..........................................................................................................................................++++
+.........................................................................++++
+e is 65537 (0x010001)
+Generating Root CA certificate
+req: No value provided for Subject Attribute O, skipped
+Generating key [/local/certs/key/keyfile.key]
+Generating RSA private key, 4096 bit long modulus (2 primes)
+............++++
+.........................++++
+e is 65537 (0x010001)
+Creating certificate Sign Request (CSR) [/local/certs/csr/keyfile.csr]
+req: No value provided for Subject Attribute O, skipped
+Signing CSR [/local/certs/csr/keyfile.csr] with local CA
+Signature ok
+subject=CN = domino-1.hcl.xby.icdc.io
+Getting CA Private Key
+Removing [/local/certs/csr/keyfile.csr]
+
+Keyfile /local/certs/kyr/keyfile.kyr created successfully
+
+
+Using keyring path '/local/certs/kyr/keyfile.kyr'
+SECIssUpdateKeyringPrivateKey succeeded
+SECIssUpdateKeyringLeafCert succeeded
+
+./java -ss512k -Xmso5M -cp jhall.jar:cfgdomserver.jar:./ndext/ibmdirectoryservices.jar lotus.domino.setup.WizardManagerDomino -data /local/notesdata -silent /domino-docker/SetupProfile.pds
+All runtime errors will be logged to /local/notesdata/errorlog.txt
+*Warning all runtime debug info will be logged to /local/notesdata/setuplog.txt
+[000336:000002-00007F725FC0E700] 06/17/2021 13:18:39   Created new log file as /local/notesdata/log.nsf
+[000336:000002-00007F725FC0E700] 06/17/2021 13:18:39   On setting preserved for Database Option: LARGE_UNKTABLE for database /local/notesdata/certlog.nsf
+[000336:000002-00007F725FC0E700] 06/17/2021 13:18:49   On setting preserved for Database Option: LARGE_UNKTABLE for database /local/notesdata/reports.nsf
+[000336:000002-00007F725FC0E700] 06/17/2021 13:18:49   On setting preserved for Database Option: LARGE_UNKTABLE for database /local/notesdata/cppfbws.nsf
+
+Finished prestart script
+
+--- Starting Domino Server ---
+Using Domino config File [/etc/sysconfig/rc_domino_config]
+Using /local/notesdata/IBM_TECHNICAL_SUPPORT/console.log
+
+
+No log file to archive
+
+Starting Domino for xLinux (notes)
+Warning: LANG is not set!
+done PID is 438
+
+
+--- Stopping Domino Server ---
+Using Domino config File [/etc/sysconfig/rc_domino_config]
+
+Stopping Domino for xLinux (notes)
+ ... waiting for shutdown to complete
+ ... waiting 10 seconds
+ ... waiting 20 seconds
+ ... waiting 30 seconds
+ ... waiting 40 seconds
+Domino for xLinux (notes) shutdown completed
+
+--- Stopping Domino Server ---
+Using Domino config File [/etc/sysconfig/rc_domino_config]
+
+Stopping Domino for xLinux (notes)
+Domino Server is not running - No Shutdown needed
+Domino for xLinux (notes) shutdown completed
+
+--- Domino Server Shutdown ---

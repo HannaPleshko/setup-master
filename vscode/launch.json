@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "debug server",
+      "program": "${workspaceFolder}/index.js",
+      "skipFiles": ["<node_internals>/**"],
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "env": {"NODE_ENV": "development"}
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "debug tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "skipFiles": ["<node_internals>/**"],
+      "args": [
+        "-r",
+        "ts-node/register",
+        "--timeout",
+        "999999",
+        "--recursive",
+        "--colors",
+        "${workspaceFolder}/src/tests/**/mail.test.ts"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/src/**/*.ts"],
+      "env": {"TS_NODE_FILES": "true"},
+    },
+  ]
+}

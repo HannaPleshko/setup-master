@@ -1,0 +1,72 @@
+{
+  "serverSetup": {
+    "server": {
+      "type": "additional",
+      "name": "secondary",
+      "domainName": "quattro",
+      "title": "IBAHCL secondary",
+      "password": null,
+      "IDFilePath": "/tmp/server.id",
+      "minPasswordLength": 0,
+      "serverTasks": "replica,router,update,amgr,adminp,http,certmgr,keep"
+    },
+
+    "network": {
+      "hostName": "secondary.hcl.a.xby.icdc.io",
+      "enablePortEncryption": true,
+      "enablePortCompression": true
+    },
+
+    "org": {
+      "orgName": "ibahcl",
+      "certifierPassword": "ibahcl_org_zQhP8"
+    },
+
+    "admin": {
+      "CN": "Full Admin"
+    },
+
+   "existingServer": {
+      "CN": "prime",
+      "hostNameOrIP": "prime.hcl.a.xby.icdc.io" 
+    },
+
+    "notesINI": {
+      "Create_R12_databases": "1",
+      "Create_R85_log": "1",
+      "ADMIN_IGNORE_NEW_SERVERNAMING_CONVENTION": "1",
+      "LOG_REPLICATION": "0",
+      "LOG_SESSIONS": "0",
+      "HTTPPublicURLs": "/iwaredir.nsf/*:/.well-known*",
+      "ENABLE_SNI": "1",
+      "HTTPEnableMethods": "GET,POST,PUT,DELETE,HEAD",
+      "ADMIN_CLIENT_SKIP_DOMINO": "1",
+      "COMPRESS_LZ1_CREATE": "1",
+      "CREATE_NIFNSF_DATABASES": "1",
+      "NIFNSFENABLE": "1",
+      "FTBASEPATH": "/local/nif",
+      "DAOS_ENCRYPT_NLO": "0",
+      "DAOS_MAX_FILES_PER_SUBCONTAINER": "10000",
+      "EVENT_POOL_SIZE": "41943040",
+      "SETUPLEAVESERVERTASKS": "1",
+      "SSL_DISABLE_EXTENDED_MASTER_SECRET": "1",
+      "Server_MinPossibleTransTime": "1500",
+      "Server_MaxPossibleTransTime": "20000000",
+      "NSF_BUFFER_POOL_SIZE_MB": "256",
+      "FT_FLY_INDEX_OFF": "1",
+      "UPDATE_FULLTEXT_THREAD": "1",
+      "FTG_USE_SYS_MEMORY": "1"
+    },
+
+    "security": {
+      "ACL": {
+        "prohibitAnonymousAccess": true,
+        "addLocalDomainAdmins": true
+      }
+    }
+  },
+
+  "autoConfigPreferences": {
+    "startServerAfterConfiguration": true 
+  }
+}

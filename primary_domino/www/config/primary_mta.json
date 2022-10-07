@@ -1,0 +1,46 @@
+{
+  "title": "IBAHCL first Domino and MTA",
+  "owner": "Daniil Satsura",
+  "debug": true,
+  "notesini": {
+    "HTTPEnableMethods": "GET,POST,PUT,DELETE,HEAD",
+    "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,LDAP,RnRMgr,http,smtp",
+    "HTTPPublicURLs": "/iwaredir.nsf/*:.well-known*"
+  },
+  "database": [
+    {
+      "filename": "names.nsf",
+      "create": "true",
+      "documents": [
+        {
+	  "type": "server",
+          "fields": [
+            {
+              "name": "SMTPListenerEnabled",
+              "value": "1"
+            },
+            {
+              "name": "Tasks",
+	      "append": true,
+              "value": "SMTP Mail Routing"
+            }
+          ]
+	}
+      ]
+    }
+  ],
+  "registration":{
+    "certifierPassword": "{{OrganizationPassword}}",
+    "users": [
+    ]
+  },
+  "testusers": {
+    "certifierPassword": "{{OrganizationPassword}}",
+    "count": 30,
+    "lastName": "Doe",
+    "firstName": "John",
+    "userPassword": "ibahcl_testuser0"
+  },
+  "certificates": [
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "IBAHCL",
+  "owner": "IBAHCL",
+  "debug": "true",
+  "notesini": {
+    "HTTPEnableMethods": "GET,POST,PUT,DELETE,HEAD",
+    "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,LDAP,RnRMgr,http,smtp,keep",
+    "HTTPPublicURLs": "/iwaredir.nsf/*:.well-known*"
+  },
+  "database": [
+  ],
+  "testusers": {
+    "certifierPassword": "ibahcl_org-G5mWp",
+    "count": 3,
+    "lastName": "Dev",
+    "firstName": "User",
+    "userPassword": "ibahcl_testuser0",
+    "idFilePath": "/local/notesdata/domino/html/"
+  }
+}
